@@ -1,0 +1,41 @@
+#documentContainer {
+    flex: 1;
+    margin: 2%;
+}
+
+#documentItem {
+    margin: 0.5%;
+}
+
+.documentListContainer {
+    width: 30%;
+}
+
+.grid-container-create {
+    display: flex;
+    flex: 1;
+    /* border-bottom: 2px solid #26608f; */
+    padding: 10px;
+    /* display: grid;
+    grid-auto-columns: 60% 40%; */
+    /* grid-auto-rows: auto; */
+    /* grid-gap: 5px; */
+}
+
+#form {
+    /* display: flex; */
+    /* margin: 5%; */
+}
+
+.example-form {
+    /* min-width: 150px; */
+    /* max-width: 500px; */
+    /* width: 100%; */
+    /* flex: 1; */
+    /* justify-content: space-between; */
+}
+
+.example-full-width {
+    /* flex: 2; */
+    margin-right: 2%;
+}
