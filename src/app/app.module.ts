@@ -17,7 +17,10 @@ import { BmcanvasViewComponent } from "./components/bmcanvas-view/bmcanvas-view.
 import { PageNotFoundComponent } from "./components/page-not-found/page-not-found.component";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatIconModule } from "@angular/material/icon";
-import { ErrorComponent } from "./components/error/error.component";
+import { OverlayComponent } from "./components/overlay/overlay.component";
+import { MatDialogModule } from "@angular/material/dialog";
+import { MatStepperModule } from "@angular/material/stepper";
+import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 
 const appRoutes: Routes = [
   {
@@ -39,15 +42,20 @@ const appRoutes: Routes = [
     AppComponent,
     BmcanvasListViewComponent,
     BmcanvasViewComponent,
-    PageNotFoundComponent
-    // ErrorComponent
+    PageNotFoundComponent,
+    OverlayComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(
-      appRoutes
-      // { enableTracing: true } // <-- debugging purposes only
+      appRoutes,
+      { enableTracing: true } // <-- debugging purposes only
     ),
+    MatDialogModule,
+
+    BrowserModule,
+    BrowserAnimationsModule,
+
     GraphQLModule,
     HttpClientModule,
     BrowserAnimationsModule,
@@ -58,9 +66,12 @@ const appRoutes: Routes = [
     MatListModule,
     MatInputModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    MatStepperModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
-  // entryComponents: [ErrorComponent],
+  entryComponents: [OverlayComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

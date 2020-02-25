@@ -1,0 +1,339 @@
+<h2 mat-dialog-title>{{data.name}}</h2>
+
+<mat-dialog-content>
+    <div *ngIf="stateChange === 0">
+        <mat-card-header>
+            <mat-card-title>1. Question about Key Partners</mat-card-title>
+            <mat-card-subtitle>Explanation for question</mat-card-subtitle>
+        </mat-card-header>
+
+        <mat-card-content class="main-container">
+            <form class="example-form">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Leave a comment</mat-label>
+                    <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+                </mat-form-field>
+            </form>
+        </mat-card-content>
+        <mat-card-actions align="start">
+            <mat-dialog-actions>
+                <button mat-raised-button (click)="stateChange = stateChange + 1">Change state</button>
+            </mat-dialog-actions>
+        </mat-card-actions>
+
+        <mat-card-footer align="center">
+            <!-- Footer -->
+        </mat-card-footer>
+    </div>
+
+
+    <div *ngIf="stateChange === 1">
+        <mat-card-header>
+            <!-- <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
+                {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
+            </button> -->
+            <mat-card-title>Value Proposition</mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content class="main-container">
+            <mat-horizontal-stepper [linear]="isLinear" #stepper>
+                <mat-step [stepControl]="firstFormGroup">
+                    <form [formGroup]="firstFormGroup">
+                        <ng-template matStepLabel>Fill out your Value Propositions</ng-template>
+                        <mat-form-field>
+                            <mat-label>Value Propositions</mat-label>
+                            <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+                        </mat-form-field>
+                        <div>
+                            <button mat-button (click)="stateChange = stateChange -1">Back</button>
+                            <button mat-button matStepperNext>Next</button>
+                        </div>
+                    </form>
+                </mat-step>
+                <mat-step [stepControl]="secondFormGroup">
+                    <form [formGroup]="secondFormGroup">
+                        <ng-template matStepLabel>Fill out your Customer Relationships</ng-template>
+                        <mat-form-field>
+                            <mat-label>Customer Relationships</mat-label>
+                            <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY" required>
+                        </mat-form-field>
+                        <div>
+                            <button mat-button matStepperPrevious>Back</button>
+                            <button mat-button (click)="stateChange = stateChange + 1">Next</button>
+                        </div>
+                    </form>
+                </mat-step>
+            </mat-horizontal-stepper>
+        </mat-card-content>
+        <!-- <mat-card-actions align="start"> -->
+        <!-- <mat-dialog-actions>
+                <button mat-raised-button (click)="stateChange = stateChange -1">back</button>
+                <button mat-raised-button (click)="stateChange = stateChange + 1">next</button>
+            </mat-dialog-actions> -->
+        <!-- </mat-card-actions> -->
+
+        <mat-card-footer align="center">
+            <!-- Footer -->
+        </mat-card-footer>
+    </div>
+
+
+
+    <div *ngIf="stateChange === 2">
+        <mat-card-header>
+            <mat-card-title>Value Creation</mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content class="main-container">
+            <mat-horizontal-stepper [linear]="isLinear" #stepper>
+                <mat-step [stepControl]="thirdFormGroup">
+                    <form [formGroup]="thirdFormGroup">
+                        <ng-template matStepLabel>Fill out your Key Partners</ng-template>
+                        <mat-form-field>
+                            <mat-label>Key Partners</mat-label>
+                            <input matInput formControlName="thirdCtrl" placeholder="Ex. 1 Main St, New York, NY" required>
+                        </mat-form-field>
+                        <div>
+                            <button mat-button (click)="stateChange = stateChange -1">Back</button>
+                            <button mat-button matStepperNext>Next</button>
+                        </div>
+                    </form>
+                </mat-step>
+                <mat-step [stepControl]="fourthFormGroup">
+                    <form [formGroup]="fourthFormGroup">
+                        <ng-template matStepLabel>Fill out your Key Activities</ng-template>
+                        <mat-form-field>
+                            <mat-label>Key Activities</mat-label>
+                            <input matInput formControlName="fourthCtrl" placeholder="Ex. 1 Main St, New York, NY" required>
+                        </mat-form-field>
+                        <div>
+                            <button mat-button matStepperPrevious>Back</button>
+                            <button mat-button matStepperNext>Next</button>
+                        </div>
+                    </form>
+                </mat-step>
+                <mat-step [stepControl]="fifthFormGroup">
+                    <form [formGroup]="fifthFormGroup">
+                        <ng-template matStepLabel>Fill out your Key Resources</ng-template>
+                        <mat-form-field>
+                            <mat-label>Key Resources</mat-label>
+                            <input matInput formControlName="fifthCtrl" placeholder="Ex. 1 Main St, New York, NY" required>
+                        </mat-form-field>
+                        <div>
+                            <button mat-button matStepperPrevious>Back</button>
+                            <button mat-button (click)="stateChange = stateChange +1">Next</button>
+                        </div>
+                    </form>
+                </mat-step>
+            </mat-horizontal-stepper>
+        </mat-card-content>
+        <mat-card-actions align="start">
+            <!-- <mat-dialog-actions>
+                <button mat-raised-button (click)="stateChange = stateChange -1">back</button>
+                <button mat-raised-button (click)="stateChange = stateChange + 1">next</button>
+            </mat-dialog-actions> -->
+        </mat-card-actions>
+
+        <mat-card-footer align="center">
+            <!-- Footer -->
+        </mat-card-footer>
+    </div>
+
+
+
+    <div *ngIf="stateChange === 3">
+        <mat-card-header>
+            <mat-card-title>Value delivery</mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content class="main-container">
+            <mat-horizontal-stepper [linear]="isLinear" #stepper>
+                <mat-step [stepControl]="sixthFormGroup">
+                    <form [formGroup]="sixthFormGroup">
+                        <ng-template matStepLabel>Fill out your Channels</ng-template>
+                        <mat-form-field>
+                            <mat-label>Channels</mat-label>
+                            <input matInput formControlName="sixthCtrl" placeholder="Ex. 1 Main St, New York, NY" required>
+                        </mat-form-field>
+                        <div>
+                            <button mat-button (click)="stateChange = stateChange -1">Back</button>
+                            <button mat-button matStepperNext>Next</button>
+                        </div>
+                    </form>
+                </mat-step>
+                <mat-step [stepControl]="seventhFormGroup">
+                    <form [formGroup]="seventhFormGroup">
+                        <ng-template matStepLabel>Fill out your Customer Relationships</ng-template>
+                        <mat-form-field>
+                            <mat-label>Customer Segments</mat-label>
+                            <input matInput formControlName="seventhCtrl" placeholder="Ex. 1 Main St, New York, NY" required>
+                        </mat-form-field>
+                        <div>
+                            <button mat-button matStepperPrevious>Back</button>
+                            <button mat-button (click)="stateChange = stateChange +1">Next</button>
+                        </div>
+                    </form>
+                </mat-step>
+            </mat-horizontal-stepper>
+        </mat-card-content>
+        <mat-card-actions align="start">
+            <!-- <mat-dialog-actions>
+                <button mat-raised-button (click)="stateChange = stateChange -1">back</button>
+                <button mat-raised-button (click)="stateChange = stateChange + 1">next</button>
+            </mat-dialog-actions> -->
+        </mat-card-actions>
+
+        <mat-card-footer align="center">
+            <!-- Footer -->
+        </mat-card-footer>
+    </div>
+
+
+
+    <div *ngIf="stateChange === 4">
+        <mat-card-header>
+            <mat-card-title>Value Capture</mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="main-container">
+            <mat-horizontal-stepper [linear]="isLinear" #stepper>
+                <mat-step [stepControl]="eightFormGroup">
+                    <form [formGroup]="eightFormGroup">
+                        <ng-template matStepLabel>Fill out your Cost Structure</ng-template>
+                        <mat-form-field>
+                            <mat-label>Cost Structure</mat-label>
+                            <input matInput formControlName="eightCtrl" placeholder="Ex. 1 Main St, New York, NY" required>
+                        </mat-form-field>
+                        <div>
+                            <button mat-button (click)="stateChange = stateChange -1">Back</button>
+                            <button mat-button matStepperNext>Next</button>
+                        </div>
+                    </form>
+                </mat-step>
+                <mat-step [stepControl]="ninthFormGroup">
+                    <form [formGroup]="ninthFormGroup">
+                        <ng-template matStepLabel>Fill out your Revenue Streams</ng-template>
+                        <mat-form-field>
+                            <mat-label>Revenue Streams</mat-label>
+                            <input matInput formControlName="ninthCtrl" placeholder="Ex. 1 Main St, New York, NY" required>
+                        </mat-form-field>
+                        <div>
+                            <button mat-button (click)="stateChange = stateChange -1">Back</button>
+                            <button mat-button matStepperNext>Next</button>
+                        </div>
+                    </form>
+                </mat-step>
+                <mat-step>
+                    <ng-template matStepLabel>Done</ng-template>
+                    <p>You are now done.</p>
+                    <div>
+                        <button mat-button matStepperPrevious>Back</button>
+                        <button mat-button (click)="stateChange = stateChange + 1">Reset</button>
+                        <!-- <button mat-button (click)="stepper.reset()">Reset</button> -->
+                    </div>
+                </mat-step>
+            </mat-horizontal-stepper>
+        </mat-card-content>
+        <mat-card-actions align="start">
+            <!-- <mat-dialog-actions>
+                <button mat-raised-button (click)="stateChange = stateChange -1">back</button>
+                <button mat-raised-button (click)="stateChange = stateChange + 1">next</button>
+            </mat-dialog-actions> -->
+        </mat-card-actions>
+
+        <mat-card-footer align="center">
+            <!-- Footer -->
+        </mat-card-footer>
+    </div>
+
+
+
+    <div *ngIf="stateChange === 5">
+        <mat-card-header>
+            <mat-card-title>Title</mat-card-title>
+            <mat-card-subtitle>New State 5</mat-card-subtitle>
+        </mat-card-header>
+
+        <mat-card-content class="main-container">
+            <img matCardImage src="assets/favicon.png"> {{data.message}}
+        </mat-card-content>
+        <mat-card-actions align="start">
+            <mat-dialog-actions>
+                <button mat-raised-button (click)="stateChange = stateChange -1">back</button>
+                <button mat-raised-button (click)="stateChange = stateChange + 1">next</button>
+            </mat-dialog-actions>
+        </mat-card-actions>
+
+        <mat-card-footer align="center">
+            <!-- Footer -->
+        </mat-card-footer>
+    </div>
+
+
+
+    <div *ngIf="stateChange === 6">
+        <mat-card-header>
+            <mat-card-title>Title</mat-card-title>
+            <mat-card-subtitle>New State 6</mat-card-subtitle>
+        </mat-card-header>
+
+        <mat-card-content class="main-container">
+            <img matCardImage src="assets/favicon.png"> {{data.message}}
+        </mat-card-content>
+        <mat-card-actions align="start">
+            <mat-dialog-actions>
+                <button mat-raised-button (click)="stateChange = stateChange -1">back</button>
+                <button mat-raised-button (click)="stateChange = stateChange + 1">next</button>
+            </mat-dialog-actions>
+        </mat-card-actions>
+
+        <mat-card-footer align="center">
+            <!-- Footer -->
+        </mat-card-footer>
+    </div>
+
+
+
+    <div *ngIf="stateChange === 7">
+        <mat-card-header>
+            <mat-card-title>Title</mat-card-title>
+            <mat-card-subtitle>New State 7</mat-card-subtitle>
+        </mat-card-header>
+
+        <mat-card-content class="main-container">
+            <img matCardImage src="assets/favicon.png"> {{data.message}}
+        </mat-card-content>
+        <mat-card-actions align="start">
+            <mat-dialog-actions>
+                <button mat-raised-button (click)="stateChange = stateChange -1">back</button>
+                <button mat-raised-button (click)="stateChange = stateChange + 1">next</button>
+            </mat-dialog-actions>
+        </mat-card-actions>
+
+        <mat-card-footer align="center">
+            <!-- Footer -->
+        </mat-card-footer>
+    </div>
+
+
+    <div *ngIf="stateChange === 8">
+        <mat-card-header>
+            <mat-card-title>Title</mat-card-title>
+            <mat-card-subtitle>New State 9</mat-card-subtitle>
+        </mat-card-header>
+
+        <mat-card-content class="main-container">
+            <img matCardImage src="assets/favicon.png"> {{data.message}}
+        </mat-card-content>
+        <mat-card-actions align="start">
+            <mat-dialog-actions>
+                <button mat-raised-button (click)="stateChange = stateChange - 1">back</button>
+                <button mat-raised-button (click)="closeDialog()">Ok</button>
+            </mat-dialog-actions>
+        </mat-card-actions>
+
+        <mat-card-footer align="center">
+            <!-- Footer -->
+        </mat-card-footer>
+
+    </div>
+</mat-dialog-content>

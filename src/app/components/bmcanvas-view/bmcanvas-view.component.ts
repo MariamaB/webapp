@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
-import { MatDialog } from "@angular/material";
-import { ErrorComponent } from "../error/error.component";
+// import { MatDialog } from "@angular/material";
+// import { ErrorComponent } from "../error/error.component";
 
 @Component({
   selector: "app-bmcanvas-view",

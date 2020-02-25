@@ -5,16 +5,6 @@
             <button mat-button color="basic" (click)="passData()">back</button>
         </div>
     </mat-toolbar-row>
-
-    <!-- <mat-toolbar-row id="form-container">
-        <form class="example-form">
-            <mat-form-field appearance="outline" class="example-full-width">
-                <mat-label>Design for</mat-label>
-                <input matInput type="text" [value]="this.businessModelData.name" (input)="this.businessModelData.name = $event.target.value">
-                <mat-icon matSuffix>border_color</mat-icon>
-            </mat-form-field>
-        </form>
-    </mat-toolbar-row> -->
 </mat-toolbar>
 
 
@@ -32,36 +22,36 @@
         <mat-card class="bmc-card" [class.mat-elevation-z8]="true">
             <div class="grid-container">
                 <div class="grid-container-top">
-                    <mat-card [class.mat-elevation-z3]="true" class="item1">
+                    <mat-card [class.mat-elevation-z3]="true" id="item1">
                         <mat-card-title>Key Partners</mat-card-title>
                         <textarea style="height: 90%;" type="text" [value]="this.businessModelData.keyPartners" (input)="this.businessModelData.keyPartners = $event.target.value"></textarea>
                     </mat-card>
 
-                    <mat-card [class.mat-elevation-z3]="true" class="item2">
+                    <mat-card class="half" [class.mat-elevation-z3]="true" id="item2">
                         <mat-card-title>Key Activities</mat-card-title>
                         <textarea style="height: 70%;" type="text" [value]="this.businessModelData.keyActivities" (input)="this.businessModelData.keyActivities = $event.target.value"></textarea>
                     </mat-card>
 
-                    <mat-card [class.mat-elevation-z3]="true" class="item3">
+                    <mat-card [class.mat-elevation-z3]="true" id="item3">
                         <mat-card-title>Value Propositions</mat-card-title>
                         <textarea style="height: 90%;" type="text" [value]="this.businessModelData.valueProposition" (input)="this.businessModelData.valueProposition = $event.target.value"></textarea>
                     </mat-card>
 
-                    <mat-card [class.mat-elevation-z3]="true" class="item4">
+                    <mat-card class="half" [class.mat-elevation-z3]="true" id="item4">
                         <mat-card-title>Customer Relationships</mat-card-title>
                         <textarea style="height: 70%;" type="text" [value]="this.businessModelData.customerRelationships" (input)="this.businessModelData.customerRelationships = $event.target.value"></textarea>
                     </mat-card>
 
-                    <mat-card [class.mat-elevation-z3]="true" class="item5">
+                    <mat-card class="half" [class.mat-elevation-z3]="true" id="item5">
                         <mat-card-title>Customer Segments</mat-card-title>
                         <textarea style="height: 70%;" type="text" [value]="this.businessModelData.customerSegments" (input)="this.businessModelData.customerSegments = $event.target.value"></textarea>
                     </mat-card>
-                    <mat-card [class.mat-elevation-z3]="true" class="item7">
+                    <mat-card class="half" [class.mat-elevation-z3]="true" id="item7">
                         <mat-card-title>Key Resources</mat-card-title>
                         <textarea style="height: 70%;" type="text" [value]="this.businessModelData.keyResources" (input)="this.businessModelData.keyResources = $event.target.value"></textarea>
                     </mat-card>
 
-                    <mat-card [class.mat-elevation-z3]="true" class="item8">
+                    <mat-card [class.mat-elevation-z3]="true" id="item8">
                         <mat-card-title>Channels</mat-card-title>
                         <textarea style="height: 90%;" type="text" [value]="this.businessModelData.channels" (input)="this.businessModelData.channels = $event.target.value"></textarea>
                     </mat-card>

@@ -14,7 +14,7 @@
 
                     <div style="width: fit-content; grid-column: 2;">
                         <a routerLink="/bmcanvas-view" [state]="{data: businessModel}">
-                            <button mat-button color="primary">Edit</button>
+                            <button mat-button color="primary" (click)="passDataToOverlay(businessModel.name)">Edit</button>
                         </a>
                         <button mat-button color="primary" (click)="deleteBusinessModel(businessModel.id)">Delete</button>
                     </div>
@@ -25,7 +25,7 @@
         <div style="flex: 2; align-self: center;">
             <h3>Create new Business Model Canvas</h3>
             <div id="form">
-                <form class="example-form">
+                <form formControlName="name" class="example-form">
                     <mat-form-field class="example-full-width">
                         <input matInput placeholder="Design for" type="text" [value]="this.name" (input)="this.name = $event.target.value">
                     </mat-form-field>
@@ -35,35 +35,4 @@
 
         </div>
     </div>
-
-    <div style=" flex: 3; margin-top: 10%;">
-
-    </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-<!-- <div>
-    <mat-card>Simple card</mat-card>
-    <h1>Docs</h1>
-    <h2>Documents passed bei Graphql</h2>
-    <input [value]="name">
-    <textarea matInput cols="30" rows="10" id="myTextarea" placeholder="oijm" [value]="text"></textarea>
-    <button mat-button color="primary" (click)="this.createNewDocument()">create</button>
-
-    <div id="documentContainer" *ngFor="let doc of documents">
-        <span id="documentItem" style="flex: 1">{{doc.id}}. </span>
-        <span id="documentItem" style="flex: 1">name: {{doc.name}}</span>
-        <span style="flex: 2;"> Content: {{doc.content}}</span>
-    </div>
-</div>
-
-<div> new doc!!! {{this.document}}</div> -->

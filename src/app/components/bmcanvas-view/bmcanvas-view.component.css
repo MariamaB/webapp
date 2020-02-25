@@ -10,14 +10,16 @@
 }
 
 #content-container {
-    padding: 5% 8% 5% 8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 800px;
 }
 
 .bmc-card {
     display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    padding: 2% 2% 25% 2%;
+    justify-content: center;
+    align-items: center;
 }
 
 mat-card-title {
@@ -33,32 +35,28 @@ textarea {
 
 .grid-container {
     display: grid;
-    grid-auto-rows: 110% 50%;
+    grid-auto-rows: 70% 30%;
     grid-auto-columns: 100%;
-    grid-gap: 2%;
-    /* background-color: #2196f3; */
+    height: 600px;
+    grid-gap: 5px;
 }
 
 .grid-container-top {
     display: grid;
     grid-template-columns: 19.5% 20% 19.5% 20% 19.3%;
     grid-gap: 5px;
-    /* background-color: #2196f3; */
-    /* padding: 10% 10% 0 10%; */
 }
 
 .grid-container-bottom {
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 49.95% 49.95%;
     grid-gap: 5px;
-    /* padding: 0% 0% 20% 0%; */
 }
 
 .grid-container-bottom>mat-card {
     border: 2px solid #26608f;
     border-radius: 5px;
     text-align: center;
-    padding: 20px 0;
     font-size: 10px;
 }
 
@@ -66,35 +64,35 @@ textarea {
     border: 2px solid #26608f;
     border-radius: 5px;
     text-align: center;
-    padding: 20px 0;
     font-size: 10px;
+}
+
+.half {
+    height: 170px;
 }
 
 mat-card-title {
     font-style: oblique;
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     font-weight: bold;
-    /* background-color: aqua; */
-    /* border-bottom-style: ridge; */
     border-bottom-color: #d2d4d6;
 }
 
 .grid-container-bottom>div {
     border: 2px solid #26608f;
     border-radius: 5px;
-    /* padding: 0px 0; */
 }
 
-.item1 {
+#item1 {
     grid-row: 1 / span 2;
 }
 
-.item3 {
+#item3 {
     grid-column: 3;
     grid-row: 1 / span 2;
 }
 
-.item8 {
+#item8 {
     grid-column: 5;
     grid-row: 1 / span 2;
 }
@@ -102,13 +100,9 @@ mat-card-title {
 #form-container {
     display: flex;
     justify-content: center;
-    /* background-color: #658cac; */
-    /* margin: 5%; */
 }
 
 #form-container>mat-card {
     display: flex;
     justify-content: center;
-    /* background-color: #658cac; */
-    /* margin: 5%; */
 }
